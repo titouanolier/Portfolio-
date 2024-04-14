@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Titouan Olier" description="About Titouan Olier">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/skema.png"
+					alt="Jeanine White at work with a colleague"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">EDUCATION</h2>
+				<div class="content">
+					<p>
+						
+					SKEMA Business School, Paris, France:
+					</p>
+					<p>
+						Pursued MSc in Financial Markets and Investments, gaining expertise in trading automation, options pricing, and structured products. Conducted research on commodity return predictability.
+					</p>
+					<p>
+						
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title"></h2>
+				<div class="content">
+					<p> 
+						Aix-Marseille University, Aix-en-Provence, France:
+
+
+					</p>
+					Completed Master's in Financial Risk Management, specializing in portfolio optimization and options pricing. Thesis focused on evaluating socially responsible investment strategies.
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title"></h2>
+				<div class="content">
+					<p>CUNEF Universidad, Madrid, Spain:</p>
+					Participated in an exchange program, enhancing understanding of international finance and cross-cultural communication.
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">PROFESSIONAL EXPERIENCES</h2>
+				<div class="content">
+					<p>
+						
+						Portfolio Manager Assistant - Crédit Agricole Group, Paris, France:
+					</p>
+					<p>
+						Developed VBA scripts for portfolio management automation, conducted market analysis, and facilitated client meetings.
+					</p>
+					<p>
+						
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title"></h2>
+				<div class="content">
+					<p> 
+					Equity Analyst - SKEMA Finance Club, Paris, France:	
+
+					</p>
+					Analyzed semiconductor and oil/gas industries, utilized Bloomberg and Excel for valuation models.
+
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title"></h2>
+				<div class="content">
+					<p> Risk Analyst - Crédit Agricole Group, Aix-en-Provence, France:</p>
+					Revised Excel databases, prepared reports, and contributed to risk analysis across domains.
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">MISCELLANEOUS</h2>
+				<div class="content">
+					<p>Proficient in English, with fluency in French and professional proficiency in Spanish. Possess a diverse set of IT skills including Excel, PowerPoint, Word, Python, R, Git, VBA, SQL, Bloomberg, and Reuters.</p>
+				</div>
+			</section>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
